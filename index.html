@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taurus Unfiltered</title>
+  <style>
+    body {
+      background: #f5f1e9;
+      color: #4a3c31;
+      font-family: 'Georgia', serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      font-weight: 900;
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
+      color: #a15e3a;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .quote {
+      font-size: 1.2rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      min-height: 60px;
+    }
+    select {
+      font-size: 1rem;
+      padding: 0.5rem;
+      margin-top: 1rem;
+    }
+    .roast {
+      margin-top: 1rem;
+      font-weight: 700;
+      color: #80331a;
+      min-height: 40px;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #a15e3a;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Taurus Unfiltered</h1>
+  <div class="quote" id="dailyQuote">Loading today's Taurus wisdom...</div>
+
+  <label for="signSelect">Pick your sign (Taurus won't judge):</label><br />
+  <select id="signSelect">
+    <option value="" selected disabled>Choose your sign</option>
+    <option value="Aries">Aries</option>
+    <option value="Taurus">Taurus</option>
+    <option value="Gemini">Gemini</option>
+    <option value="Cancer">Cancer</option>
+    <option value="Leo">Leo</option>
+    <option value="Virgo">Virgo</option>
+    <option value="Libra">Libra</option>
+    <option value="Scorpio">Scorpio</option>
+    <option value="Sagittarius">Sagittarius</option>
+    <option value="Capricorn">Capricorn</option>
+    <option value="Aquarius">Aquarius</option>
+    <option value="Pisces">Pisces</option>
+  </select>
+
+  <div class="roast" id="signRoast"></div>
+
+  <footer>Sincerely Taurus</footer>
+
+  <script>
+    async function loadDailyHoroscope() {
+      try {
+        const res = await fetch('dailyHoroscopes.json');
+        const data = await res.json();
+
+        // Get today's date in YYYY-MM-DD format
+        const today = new Date().toISOString().slice(0, 10);
+
+        const todayEntry = data[today];
+        const quoteEl = document.getElementById('dailyQuote');
+        const roastEl = document.getElementById('signRoast');
+        const signSelect = document.getElementById('signSelect');
+
+        if (!todayEntry) {
+          quoteEl.textContent = "Taurus is quiet today... come back tomorrow.";
+          return;
+        }
+
+        quoteEl.textContent = todayEntry.quote;
+
+        // When user selects a sign, show that sign's roast or advice
+        signSelect.addEventListener('change', () => {
+          const sign = signSelect.value;
+          const roast = todayEntry.signRoasts[sign];
+          roastEl.textContent = roast || "Taurus has nothing to say about that sign today.";
+        });
+      } catch (e) {
+        document.getElementById('dailyQuote').textContent = "Error loading Taurus wisdom.";
+        console.error(e);
+      }
+    }
+
+    loadDailyHoroscope();
+  </script>
+</body>
+</html>
