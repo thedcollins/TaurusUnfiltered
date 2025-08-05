@@ -1,36 +1,52 @@
 {
   "2025-08-05": {
-    "quote": "Taurus says: Today, act like you own the place—even if you don’t.",
+    "quote": "If you’re waiting for a sign, this isn’t it. Figure it out.",
     "signRoasts": {
-      "Aries": "Aries, chill out, not everything is a competition.",
-      "Taurus": "Taurus will ignore this advice but expect you to follow it.",
-      "Gemini": "Gemini, make up your mind once in a while.",
-      "Cancer": "Cancer, stop crying, the world’s not that bad.",
-      "Leo": "Leo, the spotlight isn’t always on you, deal with it.",
-      "Virgo": "Virgo, perfectionism is exhausting. Relax.",
-      "Libra": "Libra, decide already. Indecision is not cute.",
-      "Scorpio": "Scorpio, trust issues much? Chill for a day.",
-      "Sagittarius": "Sagittarius, not every adventure needs to be your story.",
-      "Capricorn": "Capricorn, work hard, but don’t forget to live.",
-      "Aquarius": "Aquarius, weird is your brand, own it.",
-      "Pisces": "Pisces, daydream less, do more."
+      "Aries": "Your energy is unmatched. So is your ability to mess things up quickly.",
+      "Taurus": "You're doing amazing. At avoiding responsibilities.",
+      "Gemini": "You're not everyone's cup of tea. You're more like chaotic espresso.",
+      "Cancer": "Feelings are not facts. Calm down.",
+      "Leo": "Your spotlight obsession is exhausting — for the rest of us.",
+      "Virgo": "Perfection isn't possible. But keep spiraling.",
+      "Libra": "Trying to please everyone? Good luck with that, sweetie.",
+      "Scorpio": "Your trust issues have trust issues.",
+      "Sagittarius": "You ghost more than Wi-Fi in the countryside.",
+      "Capricorn": "You're not a robot. Try relaxing without guilt. Just once.",
+      "Aquarius": "You’re quirky. We get it. Now sit down.",
+      "Pisces": "Your daydreams won’t pay rent. Wake up, moonchild."
     }
   },
   "2025-08-06": {
-    "quote": "Taurus says: Don’t confuse stubborn with strength.",
+    "quote": "Stop blaming Mercury. You were a mess before retrograde.",
     "signRoasts": {
-      "Aries": "Aries, slow down, speed isn’t everything.",
-      "Taurus": "Taurus will say 'I told you so' later.",
-      "Gemini": "Gemini, double minds create double problems.",
-      "Cancer": "Cancer, toughen up, buttercup.",
-      "Leo": "Leo, not every roar demands attention.",
-      "Virgo": "Virgo, learn to forgive your own mistakes.",
-      "Libra": "Libra, balance is nice, but so is decisiveness.",
-      "Scorpio": "Scorpio, your intensity scares people sometimes.",
-      "Sagittarius": "Sagittarius, aim before you shoot.",
-      "Capricorn": "Capricorn, ambition without rest is burnout.",
-      "Aquarius": "Aquarius, sometimes be the follower, not the leader.",
-      "Pisces": "Pisces, reality check: dreams don’t pay bills."
+      "Aries": "You rushed into another mess? Shocking.",
+      "Taurus": "You're still flawless. Still stubborn. Still ignoring everyone.",
+      "Gemini": "You're not a personality quiz, pick a lane.",
+      "Cancer": "Crying again? It's 9AM. Impressive.",
+      "Leo": "Not everything needs to be about you. But nice try.",
+      "Virgo": "You reorganized your anxiety. Congrats.",
+      "Libra": "Still can’t decide? Classic.",
+      "Scorpio": "Your mystery is just avoidance with eyeliner.",
+      "Sagittarius": "Running away isn’t growth. It’s cardio.",
+      "Capricorn": "Work isn’t therapy. Stop treating it like it is.",
+      "Aquarius": "You’re not above feelings. You’re just bad at them.",
+      "Pisces": "Dreaming again? Cool. Wake up though."
+    }
+  },
+  "2025-08": {
+    "monthlyHoroscopes": {
+      "Aries": "August challenges your impulsiveness. This month, slow down and think before acting. Your usual rush to dive in headfirst could lead to complications, especially in relationships. Financial decisions require caution; avoid risky investments. Embrace patience and channel your energy into long-term goals. By month’s end, you’ll find clarity and renewed strength.",
+      "Taurus": "August is your month to shine, Taurus, but beware: the cosmic energy will push you into uncomfortable territory that demands change. You’ll feel an intense urge to break free from old habits and routines. While your natural stubbornness might resist, try to embrace the transformation — it’s necessary for your growth. Relationships could be challenging, with emotional misunderstandings popping up; communicate clearly and don’t hold grudges. Financially, the stars suggest caution—avoid impulsive spending and focus on long-term stability. Your health benefits from grounding practices like yoga or spending time in nature. By the end of the month, you’ll emerge stronger, wiser, and ready to tackle new opportunities with your trademark determination and grace. Embrace the chaos; it’s molding the new you.",
+      "Gemini": "This August, your dual nature is both your strength and weakness. You’ll juggle multiple projects and social commitments, but beware burnout. Communication is your superpower—use it wisely to clear misunderstandings and deepen connections. Be wary of gossip and rumors that can derail your progress. Focus on self-care and setting boundaries to maintain your mental balance. The latter half of the month brings exciting new opportunities if you stay grounded.",
+      "Cancer": "August stirs deep emotions, Cancer. You’ll feel pulled between protecting yourself and opening up to others. Family matters may come to the forefront, requiring patience and diplomacy. Don’t shy away from tough conversations—they’re necessary for healing. Your intuition is heightened; trust it but avoid jumping to conclusions. Financial stability improves if you avoid emotional spending. End the month with a renewed sense of security and peace.",
+      "Leo": "Your need for recognition is strong this August, Leo, but the universe asks you to share the spotlight. Collaboration brings success; don’t let ego get in the way. Romantic and creative energies are high—channel them into passion projects. Financially, it’s a good time to invest in self-growth rather than material things. Beware burnout: balance your fiery energy with rest. By the month’s end, your charm and leadership will shine brighter than ever.",
+      "Virgo": "August asks you to release control, Virgo, even if it scares you. Perfectionism can hinder progress, so focus on progress over flawlessness. Health and wellness routines benefit from flexibility rather than rigidity. Work demands may increase—prioritize tasks and don’t hesitate to delegate. Relationships need honesty and vulnerability to deepen. Financially, cautious optimism is key. By the end of the month, you’ll feel lighter and more empowered.",
+      "Libra": "Balance is your mantra this August, Libra, but life may throw curveballs. Decision-making will be tricky; trust your inner voice over external opinions. Relationships require clear boundaries—don’t lose yourself trying to keep peace. Financial negotiations could arise; be firm but fair. Your social life blossoms, but remember to carve out time for solitude. The month wraps up with newfound clarity and stronger self-worth.",
+      "Scorpio": "Intensity rules your August, Scorpio. You’ll confront hidden truths and transformative energies. Emotional upheaval is possible but necessary for deep growth. Trust your instincts, but avoid paranoia or jealousy. Passion and creativity surge—channel them constructively. Financially, avoid secretive deals or risky gambles. Your personal power grows by month’s end, leaving you ready to start fresh.",
+      "Sagittarius": "Freedom is your focus this August, Sagittarius, but responsibility calls. You may feel torn between adventure and obligations. Intellectual pursuits flourish—take time to learn something new. Travel plans might face delays; use the time for inner exploration. Relationships require compromise; be honest about your needs. Financial discipline is necessary to avoid overspending. The month closes with renewed optimism and purpose.",
+      "Capricorn": "Hard work pays off this August, Capricorn, but don’t neglect your emotional health. Career advancements are possible if you stay disciplined and patient. Family dynamics could require attention; approach with empathy. Avoid workaholic tendencies that lead to burnout. Financial planning is favored, especially long-term investments. End the month by celebrating your achievements and setting new goals.",
+      "Aquarius": "Innovation and rebellion are your themes this August, Aquarius. Expect sudden changes that push you out of your comfort zone. Embrace new ideas but stay grounded in reality. Social causes or group projects gain momentum; get involved. Personal relationships may test your boundaries—communicate openly. Financial surprises could disrupt plans; adapt quickly. The month ends with a sense of liberation and new beginnings.",
+      "Pisces": "Your creativity and empathy peak this August, Pisces. Use these gifts to heal old wounds and inspire others. Boundaries might feel blurred; practice saying no to preserve your energy. Dreams and intuition guide your decisions, but keep one foot on the ground. Financially, avoid escapism through spending. By month’s end, you’ll feel spiritually refreshed and ready to move forward with clarity."
     }
   }
 }
