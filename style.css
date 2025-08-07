@@ -1,133 +1,181 @@
-body {
-    background: #f5f1e9;
-    color: #4a3c31;
-    font-family: 'Georgia', serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .page {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  h1 {
-    font-weight: 900;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #a15e3a;
-    text-transform: uppercase;
-  }
-  
-  .content {
-    text-align: center;
-  }
-  
-  .description {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: #5c4d42;
-  }
-  
-  .section {
-    margin-top: 3rem;
-  }
-  
-  .quote {
-    font-size: 1.3rem;
-    margin: 1.5rem 0;
-    font-style: italic;
-    color: #4a3c31;
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+video#scrollVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  background: black;
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  z-index: 10;
+}
+
+.site-header ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+.site-header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.site-header a:hover {
+  color: rgb(184, 147, 109);;
+}
+
+.title-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+.quote-section {
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+.sign-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+.quote {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+.dare {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+.signs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.sign {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.sign img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.sign:hover {
+  background-color: rgb(184, 147, 109);
+}
+
+.sign::after {
+  content: attr(data-sign);
+  position: absolute;
+  bottom: -25px;
+  font-size: 0.8rem;
+  color: #ffffff;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s, bottom 0.3s;
+}
+
+.sign:hover::after {
+  opacity: 1;
+  bottom: -15px;
+}
+
+.roast {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+#signature {
+  max-width: 200px; /* adjust size as needed */
+  height: auto;
+  opacity: 0.85; /* slightly faded for a signature look */
+}
+@media (max-width: 600px) {
   .signs {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
-    justify-items: center;
-    margin-top: 2rem;
+    grid-template-columns: repeat(4, 1fr);
   }
-  
-  .sign {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: #a15e3a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .sign img {
-    width: 60%;
-    height: 60%;
-    object-fit: contain;
-    pointer-events: none;
-  }
-  
-  .sign:hover {
-    background-color: #80331a;
-  }
-  
-  .sign::after {
-    content: attr(data-sign);
-    position: absolute;
-    bottom: -25px;
-    font-size: 0.8rem;
-    color: #a15e3a;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s, bottom 0.3s;
-  }
-  
-  .sign:hover::after {
-    opacity: 1;
-    bottom: -15px;
-  }
-  
-  .roast {
-    margin-top: 2rem;
-    font-weight: 700;
-    color: #80331a;
-    font-size: 1.1rem;
-    min-height: 50px;
-    text-align: center;
-  }
-  
-  #monthlyHoroscope {
-    margin-top: 1rem;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 1rem;
-    text-align: left;
-    border-top: 1px solid #a15e3a;
-    padding-top: 0.5rem;
-    color: #80331a;
-    min-height: unset;
-  }
-  .final-cta {
-    font-style: italic;
-    color: #4a3c31;
-    font-size: 1rem;
-    margin-top: 4rem;
-  }
-  
-  footer {
-    margin-top: 4rem;
-    font-size: 0.9rem;
-    color: #a15e3a;
-    font-style: italic;
-    text-align: center;
-  }
-  
-  @media (max-width: 600px) {
-    .signs {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
+
+
+}
