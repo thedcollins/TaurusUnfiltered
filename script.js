@@ -75,7 +75,7 @@ const signs = [
 
 async function loadHoroscope() {
   try {
-    const res = await fetch('dailyHoroscopes.json');
+    const res = await fetch('daily.json');
     const data = await res.json();
 
     const today = new Date();
