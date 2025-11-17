@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KJGDPYBHX2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-KJGDPYBHX2');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Story - Taurus Unfiltered</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="story.html">Story</a></li>
+        <li><a href="https://patreon.com/taurusunfiltered">Patreon</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Background Video -->
+  <video id="scrollVideo" autoplay muted playsinline></video>
+
+  <!-- Story Content -->
+  <div class="story-section" id="storySection">
+    <div class="story-content" id="storyContent">
+      <div class="story-image-container">
+        <img src="images/Anti-Hero-Blood.png" alt="Anti Hero" class="story-image" id="storyImage">
+      </div>
+      <div class="story-synopsis-container">
+        <h2 class="story-name" id="storyName">Anti Hero</h2>
+        <div class="synopsis" id="storySynopsis">
+          <p>On his twentieth birthday, Jack Thomas encounters a rare temporal convergence that makes him eligible for selection by a mysterious system. A perfect alignment of dates and times creates the conditions needed to be recruited by the system. In exchange for extraordinary powers, he accepted Terms of Service he did not read, binding him to a contract he knows nothing about.</p>
+          
+          <p>Now Jack must follow the system's rules and complete quests assigned to him under very strict conditions. The cost of failure is erasure from existence itself.</p>
+          
+          <p>Jack discovers he is not alone and that others are bound by the same mysterious system. Some share his mission, while others have darker motives. And the system itself? It harbours secrets and hidden purposes that make Jack question whether he is truly a hero or merely a pawn in a game from which he cannot escape.</p>
+          
+          <p>Jack is desperate to find the mastermind behind the system, searching for a way out. But the deeper he delves, the more he realises that breaking free could cost him everything.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapters View (hidden by default) -->
+    <div class="chapters-view" id="chaptersView" style="display: none;">
+      <button class="back-button" id="backButton">← Back to Book</button>
+      <h2 class="chapters-title">Chapters</h2>
+      <div class="chapters-list" id="chaptersList">
+        <!-- Chapters will be dynamically added here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize video for story page
+      const video = document.getElementById("scrollVideo");
+      if (video) {
+        video.src = "/videos/angry.mp4";
+        video.loop = true;
+        
+        let duration = 0;
+        let scrollVelocity = 0;
+        let isUserScrolling = false;
+        let lastScrollY = window.scrollY;
+        let lastUpdateTime = performance.now();
+
+        const SCROLL_SENSITIVITY = 0.002;
+        const VELOCITY_DECAY = 0.9;
+        const IDLE_RESUME_DELAY = 500;
+
+        let idleTimeout;
+
+        video.addEventListener("loadedmetadata", () => {
+          duration = video.duration;
+          video.play();
+        });
+
+        window.addEventListener("scroll", () => {
+          const currentScrollY = window.scrollY;
+          const deltaY = currentScrollY - lastScrollY;
+          lastScrollY = currentScrollY;
+
+          scrollVelocity += deltaY * SCROLL_SENSITIVITY;
+
+          if (!isUserScrolling) {
+            isUserScrolling = true;
+            video.pause();
+          }
+
+          clearTimeout(idleTimeout);
+          idleTimeout = setTimeout(() => {
+            isUserScrolling = false;
+            video.play();
+          }, IDLE_RESUME_DELAY);
+        });
+
+        function animate() {
+          const now = performance.now();
+          const deltaTime = (now - lastUpdateTime) / 1000;
+          lastUpdateTime = now;
+
+          if (isUserScrolling || Math.abs(scrollVelocity) > 0.001) {
+            let newTime = video.currentTime + scrollVelocity;
+
+            if (newTime < 0) {
+              newTime = duration + (newTime % duration);
+            }
+            if (newTime > duration) {
+              newTime = newTime % duration;
+            }
+
+            video.currentTime = newTime;
+            scrollVelocity *= VELOCITY_DECAY;
+          }
+
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+      }
+
+      // Make book clickable to show chapters
+      const storyContent = document.getElementById('storyContent');
+      const chaptersView = document.getElementById('chaptersView');
+      const backButton = document.getElementById('backButton');
+      const chaptersList = document.getElementById('chaptersList');
+
+      console.log('Elements found:', {
+        storyContent: !!storyContent,
+        chaptersView: !!chaptersView,
+        backButton: !!backButton,
+        chaptersList: !!chaptersList
+      });
+
+      if (!storyContent || !chaptersView || !backButton || !chaptersList) {
+        console.error('Required elements not found');
+        return;
+      }
+
+      // Chapters data
+      const chapters = [
+        { id: 1, title: "Chapter 1", file: "chapters/chapter1.html" }
+      ];
+
+      // Display chapters
+      function displayChapters() {
+        chaptersList.innerHTML = '';
+        chapters.forEach(chapter => {
+          const chapterItem = document.createElement('div');
+          chapterItem.className = 'chapter-item';
+          chapterItem.innerHTML = `
+            <a href="${chapter.file}" class="chapter-link">${chapter.title}</a>
+          `;
+          chaptersList.appendChild(chapterItem);
+        });
+      }
+
+      // Show chapters view
+      storyContent.addEventListener('click', function(e) {
+        console.log('Story content clicked!');
+        e.preventDefault();
+        e.stopPropagation();
+        storyContent.style.display = 'none';
+        chaptersView.style.display = 'block';
+        displayChapters();
+      });
+
+      // Back button
+      backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        chaptersView.style.display = 'none';
+        storyContent.style.display = 'flex';
+      });
+
+      // Make story content cursor pointer
+      storyContent.style.cursor = 'pointer';
+      
+      // Make sure image doesn't block clicks
+      const storyImage = document.getElementById('storyImage');
+      if (storyImage) {
+        storyImage.style.pointerEvents = 'none';
+      }
+
+      // Also make synopsis text non-clickable to allow parent click
+      const synopsis = document.getElementById('storySynopsis');
+      if (synopsis) {
+        synopsis.style.pointerEvents = 'none';
+      }
+
+      const storyName = document.getElementById('storyName');
+      if (storyName) {
+        storyName.style.pointerEvents = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
+
